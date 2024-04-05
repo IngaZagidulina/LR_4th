@@ -1,26 +1,4 @@
 import socket
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> fa0ac8d (HW)
-from time import sleep
-
-sock = socket.socket()
-sock.setblocking(1)
-sock.connect(('10.38.165.12', 9090))
-
-#msg = input()
-msg = "Hi!"
-sock.send(msg.encode())
-
-data = sock.recv(1024)
-
-sock.close()
-
-print(data.decode())
-<<<<<<< HEAD
-=======
-=======
 import threading
 
 # Функция для приема сообщений от сервера
@@ -51,9 +29,10 @@ def send_messages(client_socket):
             break
 
 if __name__ == "__main__":
-    # Получаем данные от пользователя: IP-адрес и порт сервера, а также его имя
-    host = input("Введите IP-адрес сервера: ")
-    port = int(input("Введите порт сервера: "))
+    # Устанавливаем значения по умолчанию для IP-адреса и порта сервера
+    host = "127.0.0.1"
+    port = 8083
+    # Получаем имя пользователя от пользователя
     username = input("Введите ваше имя: ")
     
     try:
@@ -81,5 +60,3 @@ if __name__ == "__main__":
     finally:
         # Закрываем сокет при любом исходе
         client_socket.close()
->>>>>>> f3fd106 (HW)
->>>>>>> fa0ac8d (HW)
